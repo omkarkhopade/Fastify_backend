@@ -1,7 +1,9 @@
 require("dotenv").config();
+
 const path = require("path");
 const fastify = require("fastify")({ logger: true });
 const fastifyEnv = require("@fastify/env");
+
 
 //register plugins
 fastify.register(require("@fastify/cors"));
@@ -25,6 +27,7 @@ fastify.register(require("@fastify/env"), {
     },
   },
 });
+
 
 //register custom plugins
 fastify.register(require("./plugins/mongodb"));
@@ -83,5 +86,6 @@ const start = async () => {
     process.exit(1);
   }
 };
+
 
 start();
