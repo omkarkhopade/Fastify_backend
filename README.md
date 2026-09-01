@@ -1,1 +1,1 @@
-Currently working on this project 
+Currently working on thumbnail.js
