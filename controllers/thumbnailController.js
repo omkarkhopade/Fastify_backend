@@ -115,7 +115,7 @@ exports.deleteAllThumbnails = async (request, reply) => {
   try {
     const thumbnails = await Thumbnail.find({ user: request.user.id });
 
-    await Thumbnail.deleteMany({ user: request.user.id });
+    await Thumbnail.deleteMany({ user: request.user.id }); // when we touch the database , we use "await"
 
     for (const thumbnail of thumbnails) {
       const filepath = path.join(
