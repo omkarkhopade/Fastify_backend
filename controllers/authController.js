@@ -22,21 +22,21 @@ exports.login = async (request, reply) => {
     //validate body
     const { email, password } = request.body;
     const user = await User.findOne({ email });
-    if (!user) {
+    if (!user){
       return reply.code(400).send({ message: "Invalid email or password" });
     }
 
     //validate the password
 
     const isValid = await bcrypt.compare(password, user.password);
-    if (!isValid) {
+    if (!isValid){
       return reply.code(400).send({ message: "Invalid email or password" });
     }
     const token = request.server.jwt.sign({ id: user._id });
     reply.send({ token });
 
     //validate fields
-  } catch (err) {
+  } catch (err){
     reply.send(err);
   }
 };

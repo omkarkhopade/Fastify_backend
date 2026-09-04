@@ -1,4 +1,4 @@
-const fp = require("fastify-plugin");
+const fp = require("fastify-plugin"); // fp means fatify plugin
 const mongoose = require("mongoose");
 
 module.exports = fp(async (fastify, opts) => {
