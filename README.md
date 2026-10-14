@@ -1,1 +1,1 @@
-Currently working on thumbnail.js
+Finished with the Backend using Fastify Framework 
